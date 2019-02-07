@@ -97,20 +97,21 @@ form.addEventListener('submit',function(e){
 
 });
 
-// below code is not working for searching a movie;
+// below code is now working for searching a movie;
 
 var searchMovie = document.querySelector('input[type="text"]');
-searchMovie.addEventListener('mouseover',function(e){
+searchMovie.addEventListener('keyup',function(e){
     var fltr = searchMovie.value.toUpperCase();
-
-    var li= document.querySelectorAll('#movie-list li .name');
-    for(i=0;i<li.length;i++){
-        var a=li[i].getElementsByClassName('name');
-        var txtvalue=a.textContent;
-        if(txtValue.toUpperCase().indexOf(fltr) > -1){
-            li[i].style.display = "";
+    var list= document.querySelector('#movie-list ul');
+    var fullli = list.querySelectorAll('li');
+    var li = list.querySelectorAll('li .name');
+     for(i=0;i<li.length;i++){
+        var a=li[i].textContent;
+        var txtvalue = a.toUpperCase();
+         if(txtvalue.indexOf(fltr) > -1){
+            fullli[i].style.display = "";
         }else{
-            li[i].style.display = "none";
+            fullli[i].style.display = "none";
         }
     }
 });
