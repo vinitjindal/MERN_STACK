@@ -42,18 +42,23 @@ btns.forEach(function(btn){
   --> Now this is good because if we have to add another movie to the list, we can delete it unlike the previous event listener.
 */
 
+
+// code for delete the movie....
+
  var list = document.querySelector('#movie-list ul');
 
  list.addEventListener('click', function(e){
    if(e.target.className === 'delete'){          // We want to get where did the click happened, so className
-     console.log(e.target);
-     const li = e.target.parentElement;         // this is the li which is the parent to the delete and we want to delete it.
-     console.log(li);
-     li.parentNode.removeChild(li);
+     //console.log(e.target);
+     var li = e.target.parentElement;         // this is the li which is the parent to the delete and we want to delete it.
+     //console.log(li);
+     //li.parentNode.removeChild(li);
      list.removeChild(li);
 
    }
  })
+
+// for hide the list:::::
 
 var hide=document.getElementById('hide');
 hide.addEventListener('click',function(e){
@@ -64,6 +69,7 @@ hide.addEventListener('click',function(e){
     }
 });
 
+// code below is for add a movie to list::::
 
 var form = document.forms['add-movie'];
 form.addEventListener('submit',function(e){
@@ -72,7 +78,7 @@ form.addEventListener('submit',function(e){
     
     var vall=form.querySelector('input[type="text"]').value;
     
-    var li=document.createElement('l1');
+    var li=document.createElement('li');
     
     var muvi=document.createElement('span');
     
@@ -90,4 +96,23 @@ form.addEventListener('submit',function(e){
     
 
 });
+
+// below code is not working for searching a movie;
+
+var searchMovie = document.querySelector('input[type="text"]');
+searchMovie.addEventListener('mouseover',function(e){
+    var fltr = searchMovie.value.toUpperCase();
+
+    var li= document.querySelectorAll('#movie-list li .name');
+    for(i=0;i<li.length;i++){
+        var a=li[i].getElementsByClassName('name');
+        var txtvalue=a.textContent;
+        if(txtValue.toUpperCase().indexOf(fltr) > -1){
+            li[i].style.display = "";
+        }else{
+            li[i].style.display = "none";
+        }
+    }
+});
+
 
