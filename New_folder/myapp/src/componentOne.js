@@ -1,29 +1,38 @@
 import React,{ Component } from 'react';
 
-class Display extends Component{
-  state={
+const Display = (props) => {
+  /*state={
           name:'vinit',
           age:'20'
         }
 
-  handleChange=(e)=>{
+  handleChange(e){
     this.setState(
       {
         name:e.target.value,
       }
     )
-  }
+  }*/
 
-  render(){
-    return(
-      <div className='div2'>
-        <h3 className='h3'>This is 1st component inside main component</h3>
-        <input type="text" name="name" className='input' onChange={ this.handleChange }/>
-        <div className='detail'>Name: { this.state.name }</div>
-        <div className='detail'>Age: { this.state.age }</div>
-      </div>
-    )
-  }
+
+      const displayInfos = props.displayInfos;
+      console.log(displayInfos);
+      const displayList = displayInfos.map(info=>{
+        if( info.age>14 ){
+          return(
+            <div className='div2' key={info.rollno}>
+              <h3 className='h3'>This is {info.rollno} component inside main component</h3>
+              <input type="text" name="name" className='input'/>
+              <div className='detail'>Name: { info.name }</div>
+              <div className='detail'>Age: { info.age }</div>
+            </div>
+          )
+        }
+      })
+      return(
+        <div>{ displayList }</div>
+      )
+
 }
 
 export default Display;
