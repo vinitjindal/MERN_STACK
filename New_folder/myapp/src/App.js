@@ -35,7 +35,7 @@ class App extends Component {
         return info.id !== id
       });
       this.setState({
-        displayInfos: displayInfos
+        displayInfos: displayInfos   // you can use also displayInfos only acc. to es6 if u have same name;
       })
   }
 

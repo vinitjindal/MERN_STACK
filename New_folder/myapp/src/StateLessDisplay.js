@@ -17,7 +17,7 @@ export default Display2;*/
 
 const StateLessDisplay = (props) => {
   const { displayInfos, deleteInfo } = props; // this is similar to const displayInfos = this.props.displayInfos
-
+// object destructuring 
   const displayList = displayInfos.map( info => {
     // Sometimes we just want to render some part of the component and we can dothat.
     // if( info.age > 20) then render
@@ -28,7 +28,7 @@ const StateLessDisplay = (props) => {
         <div> Name: { info.name } </div>
         <div> Age: { info.age } </div>
         <div> Birth-month: { info.birthMonth } </div>
-        <button onClick={(e) => {deleteInfo(e.target.info.id)}}> Delete </button>
+        <button onClick={() => {deleteInfo(info.id)}}> Delete </button>
       </div>
     )
   });
