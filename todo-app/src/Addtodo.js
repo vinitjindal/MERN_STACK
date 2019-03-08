@@ -1,7 +1,7 @@
 import React,{ Component } from 'react';
 class Addtodo extends Component{
  state = {
-    item:null ,
+    item:" " 
  }
  handleChange=(e)=>{
    this.setState({
@@ -11,12 +11,15 @@ class Addtodo extends Component{
  handleSubmit=(e)=>{
    e.preventDefault();
    this.props.add(this.state);
+   this.setState({
+     item:" "
+   })
  }
   render(){
     return(
-      <div key = { this.state.id }>
+      <div>
         <form onSubmit = { this.handleSubmit }>
-          <input type="text" id = "item" onChange ={ this.handleChange }/>
+          <input type="text" id = "item" onChange ={ this.handleChange } value = {this.state.item}/>
           <input type='submit' />
         </form>
       </div>
