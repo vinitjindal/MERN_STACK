@@ -10,13 +10,15 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Navbar />
-        <Switch>
-            <Route exact path='/' component={Home} />
-            {/*<Route path='/about' component={About} />*/}
-            <Route path='/:id' component={ Post } />
-            <Route path='/contact' component={Contact} />
-        </Switch>
+        <div className='App'>
+          <Navbar />
+          <Switch>
+              <Route exact path='/' component={Home} />
+              {/*<Route path='/about' component={About} />*/}
+              <Route path='/contact' component={Contact} />
+              <Route path='/:id' component={ Post } />
+          </Switch>
+        </div>
       </BrowserRouter>
     );
   }
