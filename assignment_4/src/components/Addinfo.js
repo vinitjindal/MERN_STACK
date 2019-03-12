@@ -9,6 +9,11 @@ class Addinfo extends Component{
   handleSubmit=(e)=>{
     e.preventDefault();
     this.props.addinfo(this.state);
+    this.setState({
+      Name:" ",
+      Birthday:" ",
+      AboutMe:" "
+    })
   }
   handleChange=(e)=>{
     this.setState({
@@ -19,9 +24,9 @@ class Addinfo extends Component{
     return(
       <div>
         <form onSubmit = { this.handleSubmit }>
-          Name :<input type="text" id="Name" onChange = { this.handleChange }/>
-          Birthday :<input type="text" id="Birthday" onChange = { this.handleChange }/>
-          AboutMe :<input type="text" id="AboutMe" onChange = { this.handleChange }/>
+          Name :<input type="text" id="Name" onChange = { this.handleChange } value={ this.state.Name }/>
+          Birthday :<input type="text" id="Birthday" onChange = { this.handleChange } value={ this.state.Birthday } />
+          AboutMe :<input type="text" id="AboutMe" onChange = { this.handleChange } value={ this.state.AboutMe } />
           <input type="submit" value="submit"/>
         </form>
       </div>
