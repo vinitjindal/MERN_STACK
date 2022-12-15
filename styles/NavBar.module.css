@@ -1,0 +1,27 @@
+.navContainer{
+    background-color: #F88379;
+}
+
+.navItems{
+    list-style-type: none;
+    padding: 1rem;
+    margin: 0;
+}
+
+.navItems > li {
+    color: white;
+    display: inline;
+}
+
+.navItem1{
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.navItem2, .navItem3{
+    font-size: 1.25rem;
+    padding-top: 0.35rem;
+    margin-left: 2rem;
+    cursor: pointer;
+}

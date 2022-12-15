@@ -1,0 +1,13 @@
+.touristContainer{
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.touristCard{
+    min-width: 25rem;
+    max-width: 25rem;
+    border: 1px solid #F88379;
+}

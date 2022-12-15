@@ -1,0 +1,33 @@
+.formContainer{
+    width: 'full';
+    padding: 2rem;
+}
+
+.formBody{
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+
+
+.formBody  input{
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid #F88379;
+}
+
+.formBody input:focus{
+    border-color: #F88379;
+    outline: none;
+}
+
+
+.formFields{
+    
+    padding: 4rem 0 0 7rem;
+    display: grid;
+    grid-template-columns: 8rem 50%;
+    row-gap: 1rem;
+    column-gap: 2rem;
+}

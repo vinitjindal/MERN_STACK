@@ -1,0 +1,70 @@
+.modalOverlay{
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+    position:fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.modalContainer{
+    z-index: 99999;
+    top: 50%;
+    left: 50%;
+    width: 30rem;
+    min-width: 25rem; 
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+    background-color: white;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    overflow: auto;
+}
+
+.modalHeader{
+    padding: 1rem;
+    /* background-color: red; */
+}
+
+.modalBody{
+    padding: 1rem;
+}
+
+.modalFooter{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.password{
+    padding-top: 1rem;
+}
+
+.password input{
+    border: 2px solid #F88379;
+    padding: 0.5rem;
+    font-size: medium;
+}
+
+.email input:focus, .password input:focus{
+    border-color: #F88379;
+   outline: none
+}
+
+.email input{
+    border: 2px solid #F88379;
+    padding: 0.5rem;
+    font-size: medium;
+}
+
+.email, .password{
+    display: grid;
+    column-gap: 5px;
+    grid-template-columns: 100px 50%;
+}
+
+.modalFooter button{
+    width: 8rem;
+    padding: 5px;
+    font-size: medium;
+}
